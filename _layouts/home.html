@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<p class="name">{{ site.title }}</p>
+<p class="bio">{{ site.description | strip_newlines }}</p>
+
+<hr>
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <span class="date">{{ post.date | date: "%m.%d" }}</span>
+        <span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
+        {% assign label = post.tag | default: post.categories.first %}
+        {% if label %}<span class="tag">{{ label }}</span>{% endif %}
+    </li>
+    {% endfor %}
+</ul>

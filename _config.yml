@@ -1,0 +1,20 @@
+# Site settings
+title: Arjun Birthi
+email: arjunbirthi@gmail.com
+description: >-
+  Seattle-based engineer, writer, and builder exploring philosophy, AI, politics, and the human condition.
+baseurl: ""
+url: ""
+
+# Build settings — no theme; we use our own layouts/styles
+theme:
+plugins:
+  - jekyll-feed
+
+# Don't process the legacy hand-built article placeholder
+exclude:
+  - article.html
+  - CONTEXT.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

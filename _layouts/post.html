@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<a class="home-link" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+
+<header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+    <div class="article-meta">
+        <span class="article-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% assign label = page.tag | default: page.categories.first %}
+        {% if label %}<span class="tag">{{ label }}</span>{% endif %}
+    </div>
+</header>
+
+<hr>
+
+<article class="article-body">
+    {{ content }}
+</article>
