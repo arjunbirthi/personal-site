@@ -1,0 +1,10 @@
+# Your listening database. Edit by hand or via `ruby scripts/log.rb`.
+# Fields: title, artist, status (listening|listened), year, tags
+# Optional: started, finished (dates), review (URL), recorded (true once logged)
+#
+# Example:
+# - title: Ravedeath, 1972
+#   artist: Tim Hecker
+#   status: listening
+#   tags: [ambient]
+[]

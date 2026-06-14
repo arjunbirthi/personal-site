@@ -1,0 +1,71 @@
+---
+layout: default
+title: Now
+permalink: /now/
+---
+<a class="home-link" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+
+<header class="article-header">
+    <h1 class="article-title">Now</h1>
+    {% if site.data.now.updated %}
+    <div class="article-meta">
+        <span class="article-date">Updated {{ site.data.now.updated | date: "%B %-d, %Y" }}</span>
+    </div>
+    {% endif %}
+</header>
+
+<hr>
+
+{% assign reading = site.data.books | where: "status", "reading" %}
+{% assign listening = site.data.music | where: "status", "listening" %}
+
+{% if site.data.now.status %}
+<section class="now-block">
+    <p class="now-status">{{ site.data.now.status }}</p>
+</section>
+{% endif %}
+
+{% if reading.size > 0 %}
+<section class="now-block">
+    <h2>Reading</h2>
+    <ul class="archive-list">
+        {% for book in reading %}
+        <li>
+            <span class="archive-title">{{ book.title }}</span>
+            <span class="archive-author">{{ book.author }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+
+{% if listening.size > 0 %}
+<section class="now-block">
+    <h2>Listening</h2>
+    <ul class="archive-list">
+        {% for track in listening %}
+        <li>
+            <span class="archive-title">{{ track.title }}</span>
+            <span class="archive-author">{{ track.artist }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+
+{% if site.data.now.quote %}
+<section class="now-block">
+    <blockquote class="now-quote">
+        {{ site.data.now.quote.text }}
+        {% if site.data.now.quote.source %}<cite>— {{ site.data.now.quote.source }}</cite>{% endif %}
+    </blockquote>
+</section>
+{% endif %}
+
+<hr>
+
+<p class="now-links">
+    <a href="{{ '/about/' | relative_url }}">About</a>
+    · <a href="{{ '/reading/' | relative_url }}">Reading</a>
+    · <a href="{{ '/listening/' | relative_url }}">Listening</a>
+</p>

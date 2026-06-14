@@ -3,6 +3,10 @@ layout: default
 ---
 <p class="name">{{ site.title }}</p>
 <p class="bio">{{ site.description | strip_newlines }}</p>
+<p class="home-nav">
+    <a href="{{ '/about/' | relative_url }}">More about me</a>
+    · <a href="{{ '/now/' | relative_url }}">Now</a>
+</p>
 
 <hr>
 

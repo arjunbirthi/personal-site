@@ -6,7 +6,7 @@ layout: default
 <header class="article-header">
     <h1 class="article-title">{{ page.title }}</h1>
     <div class="article-meta">
-        <span class="article-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.date %}<span class="article-date">{{ page.date | date: "%B %-d, %Y" }}</span>{% endif %}
         {% assign label = page.tag | default: page.categories.first %}
         {% if label %}<span class="tag">{{ label }}</span>{% endif %}
     </div>
@@ -14,6 +14,6 @@ layout: default
 
 <hr>
 
-<article class="article-body">
+<article class="article-body{% if page.drop_cap == false %} no-dropcap{% endif %}">
     {{ content }}
 </article>

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Reading
+permalink: /reading/
+---
+<a class="home-link" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+
+<header class="article-header">
+    <h1 class="article-title">Reading</h1>
+    <div class="article-meta">
+        <span class="article-date">Every book I've read, by year.</span>
+    </div>
+</header>
+
+<hr>
+
+{% assign read = site.data.books | where: "status", "read" %}
+{% if read.size > 0 %}
+{% assign by_year = read | group_by: "year" | sort: "name" | reverse %}
+{% for group in by_year %}
+<section class="now-block">
+    <h2>{{ group.name }}</h2>
+    <ul class="archive-list">
+        {% for book in group.items %}
+        <li>
+            <span class="archive-title">{% if book.review %}<a href="{{ book.review | relative_url }}">{{ book.title }}</a>{% else %}{{ book.title }}{% endif %}</span>
+            <span class="archive-author">{{ book.author }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endfor %}
+{% else %}
+<p class="now-status">Nothing logged yet.</p>
+{% endif %}
+
+<hr>
+
+<p class="now-status">Not all books — everything except poetry. Inspired by my dear friend Arya Karthik's own list; may my reading be as voracious as theirs.</p>

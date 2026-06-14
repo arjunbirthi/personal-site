@@ -1,0 +1,35 @@
+---
+layout: default
+title: Listening
+permalink: /listening/
+---
+<a class="home-link" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+
+<header class="article-header">
+    <h1 class="article-title">Listening</h1>
+    <div class="article-meta">
+        <span class="article-date">An archive of what I've listened to and recorded.</span>
+    </div>
+</header>
+
+<hr>
+
+{% assign listened = site.data.music | where: "status", "listened" %}
+{% if listened.size > 0 %}
+{% assign by_year = listened | group_by: "year" | sort: "name" | reverse %}
+{% for group in by_year %}
+<section class="now-block">
+    <h2>{{ group.name }}</h2>
+    <ul class="archive-list">
+        {% for track in group.items %}
+        <li>
+            <span class="archive-title">{% if track.review %}<a href="{{ track.review | relative_url }}">{{ track.title }}</a>{% else %}{{ track.title }}{% endif %}</span>
+            <span class="archive-author">{{ track.artist }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endfor %}
+{% else %}
+<p class="now-status">Nothing recorded yet.</p>
+{% endif %}

@@ -1,0 +1,6 @@
+# The "now" page's free-form bits. Edit by hand or via `ruby scripts/log.rb`.
+status: A short line about what you're up to lately — edit me.
+quote:
+  text: The limits of my language mean the limits of my world.
+  source: Wittgenstein
+updated: 2026-06-13

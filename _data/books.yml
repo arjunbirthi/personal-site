@@ -1,0 +1,23 @@
+# Your reading database. Edit by hand or via `ruby scripts/log.rb`.
+# Fields: title, author, status (reading|read), year, tags
+# Optional: started, finished (dates), rating (1-5), review (URL to a review post)
+- title: Red Rising
+  author: Pierce Brown
+  status: read
+  year: 2026
+  tags: [fiction, scifi]
+- title: "If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All"
+  author: Eliezer Yudkowsky, Nate Soares
+  status: read
+  year: 2026
+  tags: [ai, nonfiction]
+- title: The Overstory
+  author: Richard Powers
+  status: read
+  year: 2026
+  tags: [fiction]
+- title: Death of a Modernist
+  author: Vikramaditya Prakash
+  status: read
+  year: 2026
+  tags: [architecture, nonfiction]
