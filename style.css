@@ -5,8 +5,9 @@ body {
     font-size:16px;
     line-height: 1.7;
     font-family: "Lora", serif;
+    font-variant-numeric: oldstyle-nums;
     margin: 0;
-} 
+}
 .container {
     max-width: 520px;
     margin: 0 auto;
@@ -32,6 +33,15 @@ li {
     align-items: baseline;
     gap: 16px;
     padding: 2px 0;
+}
+.post-list li {
+    padding: 6px 12px;
+    margin-left: -12px;
+    margin-right: -12px;
+    transition: background-color 0.15s ease;
+}
+.post-list li:hover {
+    background-color: #EDE5D5;
 }
 a {
     color:#2C2518;
@@ -92,13 +102,19 @@ hr {
     margin-top: 8px;
 }
 .article-body p {
-    margin: 0 0 22px;
+    margin: 0;
 }
-.article-body p:first-child {
-    margin-top: 0;
+.article-body p + p {
+    text-indent: 1.5em;
 }
-.article-body p:last-child {
-    margin-bottom: 0;
+.article-body p:first-child::first-letter {
+    float: left;
+    font-size: 3.4em;
+    line-height: 0.85;
+    padding: 6px 10px 0 0;
+    font-style: italic;
+    font-weight: 600;
+    color: #2C2518;
 }
 .article-body h2 {
     font-size: 17px;
@@ -173,7 +189,15 @@ hr {
     padding: 0;
 }
 .article-body hr {
-    margin: 40px auto;
-    width: 60px;
-    border-top: 1px solid #C8BFB0;
+    border: none;
+    margin: 40px 0;
+    text-align: center;
+    overflow: visible;
+    height: auto;
+}
+.article-body hr::after {
+    content: "✦";
+    color: #C8BFB0;
+    font-size: 16px;
+    line-height: 1;
 }
